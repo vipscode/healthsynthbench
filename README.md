@@ -23,16 +23,17 @@ pip install -r requirements.txt
 python benchmark.py
 ```
 
-This runs two baseline generators against a simulated chronic-disease-risk EHR dataset (see note on data below) and prints a comparative scorecard:
+This runs three baseline generators against a simulated chronic-disease-risk EHR dataset (see note on data below) and prints a comparative scorecard:
 
 ```
 Generator                   Fidelity     Utility     Privacy       F-U-P
 ========================================================================
 gaussian_copula_lite           0.988       0.960       0.635       0.855
 noise_perturbation             0.987       1.108       0.456       0.844
+ctgan                          0.909       0.923       0.625       0.815
 ```
 
-Note how `noise_perturbation` — which nearly copies real records with small perturbations — scores *higher* on utility but visibly *lower* on privacy. That's the tradeoff the benchmark is designed to surface, not an error.
+Note how `noise_perturbation` — which nearly copies real records with small perturbations — scores *higher* on utility but visibly *lower* on privacy. That's the tradeoff the benchmark is designed to surface, not an error. `ctgan` is a GAN-based deep generative baseline (Xu et al., 2019), unlike the other two statistical baselines, so it's a meaningfully different comparison point rather than just a third entry.
 
 ## On the dataset
 
@@ -40,11 +41,10 @@ This repo ships with a **simulated** EHR-style dataset (`data/real_data.py`) rat
 
 ## Adding a new generator
 
-Any generator that implements `fit_and_sample(real_df, n_samples) -> synth_df` can be dropped into `generators/` and registered in `benchmark.py`'s `GENERATORS` dict — e.g. SDV's CTGAN/TVAE, a differential-privacy generator, or your own model.
+Any generator that implements `fit_and_sample(real_df, n_samples) -> synth_df` can be dropped into `generators/` and registered in `benchmark.py`'s `GENERATORS` dict — e.g. SDV's TVAE, a differential-privacy generator, or your own model.
 
 ## Roadmap
 
-- [ ] Add CTGAN / SDV generators as additional baselines
 - [ ] Add a differentially-private generator (DP-SGD or PATE-based) to test the privacy axis against a method with a formal guarantee
 - [ ] Support multi-table / relational EHR schemas (visits, labs, meds) instead of single flat tables
 - [ ] Static leaderboard page (GitHub Pages) auto-generated from `reports/`

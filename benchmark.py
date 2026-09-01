@@ -12,7 +12,7 @@ from sklearn.model_selection import train_test_split
 
 sys.path.insert(0, ".")
 from data.real_data import generate_real_dataset
-from generators import copula_lite, noise_perturb
+from generators import copula_lite, noise_perturb, ctgan_baseline
 from metrics.fidelity import fidelity_report
 from metrics.utility import utility_report
 from metrics.privacy import privacy_report
@@ -22,6 +22,7 @@ QUASI_IDENTIFIERS = ["age", "bmi", "systolic_bp"]
 GENERATORS = {
     "gaussian_copula_lite": copula_lite.fit_and_sample,
     "noise_perturbation": noise_perturb.fit_and_sample,
+    "ctgan": ctgan_baseline.fit_and_sample,
 }
 
 

@@ -80,5 +80,46 @@
       "overall_privacy_score": 0.4562
     },
     "composite_fup_score": 0.8437
+  },
+  "ctgan": {
+    "fidelity": {
+      "per_column_marginal_fidelity": {
+        "age": 0.8831428571428571,
+        "bmi": 0.9388571428571428,
+        "systolic_bp": 0.8074285714285714,
+        "glucose": 0.8654285714285714,
+        "smoker": 0.8474285714285714,
+        "family_history": 0.8125714285714286,
+        "outcome": 0.9617142857142857
+      },
+      "mean_marginal_fidelity": 0.8738,
+      "correlation_fidelity": 0.9611,
+      "overall_fidelity_score": 0.9087
+    },
+    "utility": {
+      "trtr_auc": 0.7878,
+      "trtr_accuracy": 0.7533,
+      "tstr_auc": 0.7274,
+      "tstr_accuracy": 0.7371,
+      "relative_utility_score": 0.9234
+    },
+    "privacy": {
+      "distance_to_closest_record": {
+        "mean_dcr": 0.5987,
+        "median_dcr": 0.5315,
+        "pct_synth_within_0.1_of_real": 0.26
+      },
+      "membership_inference_attack": {
+        "attack_accuracy": 0.5124,
+        "leakage_signal": 0.0248
+      },
+      "k_anonymity_estimate": {
+        "k_min": 1,
+        "k_median": 11.0,
+        "num_equivalence_classes": 99
+      },
+      "overall_privacy_score": 0.6251
+    },
+    "composite_fup_score": 0.8146
   }
 }
