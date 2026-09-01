@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# NOTE: reports/benchmark_results.json is intentionally NOT ignored.
+# It's the proof-of-work scorecard and should stay visible on GitHub
+# without anyone having to run the code first.

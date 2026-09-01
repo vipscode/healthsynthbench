@@ -1,0 +1,84 @@
+{
+  "gaussian_copula_lite": {
+    "fidelity": {
+      "per_column_marginal_fidelity": {
+        "age": 0.99,
+        "bmi": 0.9871428571428571,
+        "systolic_bp": 0.9837142857142858,
+        "glucose": 0.9862857142857143,
+        "smoker": 0.9977142857142857,
+        "family_history": 0.9888571428571429,
+        "outcome": 0.9974285714285714
+      },
+      "mean_marginal_fidelity": 0.9902,
+      "correlation_fidelity": 0.9837,
+      "overall_fidelity_score": 0.9876
+    },
+    "utility": {
+      "trtr_auc": 0.7878,
+      "trtr_accuracy": 0.7533,
+      "tstr_auc": 0.7564,
+      "tstr_accuracy": 0.7314,
+      "relative_utility_score": 0.9601
+    },
+    "privacy": {
+      "distance_to_closest_record": {
+        "mean_dcr": 0.5286,
+        "median_dcr": 0.4744,
+        "pct_synth_within_0.1_of_real": 0.29
+      },
+      "membership_inference_attack": {
+        "attack_accuracy": 0.5044,
+        "leakage_signal": 0.0088
+      },
+      "k_anonymity_estimate": {
+        "k_min": 1,
+        "k_median": 12.0,
+        "num_equivalence_classes": 111
+      },
+      "overall_privacy_score": 0.6347
+    },
+    "composite_fup_score": 0.8545
+  },
+  "noise_perturbation": {
+    "fidelity": {
+      "per_column_marginal_fidelity": {
+        "age": 0.9817142857142858,
+        "bmi": 0.9808571428571429,
+        "systolic_bp": 0.9794285714285714,
+        "glucose": 0.9751428571428571,
+        "smoker": 0.9854285714285714,
+        "family_history": 0.9877142857142858,
+        "outcome": 0.9931428571428571
+      },
+      "mean_marginal_fidelity": 0.9833,
+      "correlation_fidelity": 0.9928,
+      "overall_fidelity_score": 0.9871
+    },
+    "utility": {
+      "trtr_auc": 0.7878,
+      "trtr_accuracy": 0.7533,
+      "tstr_auc": 0.873,
+      "tstr_accuracy": 0.8171,
+      "relative_utility_score": 1.1082
+    },
+    "privacy": {
+      "distance_to_closest_record": {
+        "mean_dcr": 0.293,
+        "median_dcr": 0.2704,
+        "pct_synth_within_0.1_of_real": 2.54
+      },
+      "membership_inference_attack": {
+        "attack_accuracy": 0.6532,
+        "leakage_signal": 0.3064
+      },
+      "k_anonymity_estimate": {
+        "k_min": 1,
+        "k_median": 17.0,
+        "num_equivalence_classes": 91
+      },
+      "overall_privacy_score": 0.4562
+    },
+    "composite_fup_score": 0.8437
+  }
+}
