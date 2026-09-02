@@ -43,13 +43,6 @@ This repo ships with a **simulated** EHR-style dataset (`data/real_data.py`) rat
 
 Any generator that implements `fit_and_sample(real_df, n_samples) -> synth_df` can be dropped into `generators/` and registered in `benchmark.py`'s `GENERATORS` dict — e.g. SDV's TVAE, a differential-privacy generator, or your own model.
 
-## Roadmap
-
-- [ ] Add a differentially-private generator (DP-SGD or PATE-based) to test the privacy axis against a method with a formal guarantee
-- [ ] Support multi-table / relational EHR schemas (visits, labs, meds) instead of single flat tables
-- [ ] Static leaderboard page (GitHub Pages) auto-generated from `reports/`
-- [ ] Attribute-inference attack as a second privacy metric alongside membership inference
-
 ## Motivation
 
 Built as a self-directed project applying data-privacy and synthetic-data techniques from prior health-tech data engineering work to a reproducible, open benchmark — an area with real relevance to how health data ecosystems evaluate and trust synthetic data pipelines.
